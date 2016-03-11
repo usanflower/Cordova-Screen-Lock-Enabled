@@ -1,0 +1,45 @@
+{
+  "name": "screen-lock-enabled",
+  "version": "0.1.0",
+  "description": "A Cordova plugin to determine if the device has a screen lock enabled.",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ],
+  "cordova": {
+    "id": "com.abarak64.screen-lock",
+    "platforms": [
+      "android",
+      "ios",
+      "wp7"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABarak64/Cordova-Screen-Lock-Enabled.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "Adam Barak",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/ABarak64/Cordova-Screen-Lock-Enabled/issues"
+  },
+  "homepage": "https://github.com/ABarak64/Cordova-Screen-Lock-Enabled#readme"
+}
