@@ -3,7 +3,10 @@ package com.abarak64.screenlock;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import android.annotation.TargetApi;
 import android.content.*;
+import android.os.Build;
 import android.provider.*;
 import android.app.*;
 
@@ -21,7 +24,11 @@ public class ScreenLock extends CordovaPlugin {
     
     public static boolean doesDeviceHaveSecuritySetup(Context context)
     {
-        return isPatternSet(context) || isPassOrPinSet(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return isDeviceLocked(context);
+        } else {
+            return isPatternSet(context) || isPassOrPinSet(context);
+        }
     }
 
     private static boolean isPatternSet(Context context)
@@ -42,5 +49,14 @@ public class ScreenLock extends CordovaPlugin {
     {
         KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE); //api 16+
         return keyguardManager.isKeyguardSecure();
+    }
+
+    /**
+     * @return true if pass or pin or pattern locks screen
+     */
+    @TargetApi(23)
+    private static boolean isDeviceLocked(Context context) {
+        KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE); //api 23+
+        return keyguardManager.isDeviceSecure();
     }
 }
