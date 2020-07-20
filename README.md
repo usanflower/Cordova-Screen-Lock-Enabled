@@ -1,3 +1,6 @@
+ABarak64/Cordova-Screen-Lock-Enabled 
+api level 23+ error 
+
 ## Cordova-Screen-Lock-Enabled
 --
 
