@@ -12,7 +12,7 @@ This is a Cordova plugin to determine if a device has a screen lock set for gett
 
 Install with Cordova cli
 
-    $ cordova plugin add https://github.com/abarak64/cordova-screen-lock-enabled.git
+    $ cordova plugin add https://github.com/usanflower/cordova-screen-lock-enabled.git
 	
 #### Usage
 
